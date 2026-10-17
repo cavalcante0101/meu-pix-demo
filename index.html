@@ -1,56 +1,24 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#101827">
-  <meta name="description" content="Protótipo pessoal para acompanhar recebimentos Pix e transferências.">
-  <link rel="manifest" href="manifest.json">
-  <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
-  <title>Meu Pix — Protótipo</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0b12"><meta name="description" content="Meu Pix — protótipo demonstrativo de carteira digital.">
+<link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css">
+<title>Meu Pix | Carteira digital</title>
 </head>
 <body>
-  <main class="app-shell">
-    <header class="topbar">
-      <div class="brand"><div class="brand-mark">P</div><div><strong>Meu Pix</strong><small>Área pessoal</small></div></div>
-      <button class="icon-button" id="privacyBtn" aria-label="Informações de segurança" title="Segurança">♢</button>
-    </header>
-
-    <section class="notice" role="status">
-      <span class="notice-dot"></span>
-      <div><strong>Modo de demonstração</strong><p>Este protótipo não movimenta dinheiro real.</p></div>
-    </section>
-
-    <section class="balance-card">
-      <div class="balance-head"><span>Saldo de demonstração</span><button id="toggleBalance" aria-label="Mostrar ou ocultar saldo">◉</button></div>
-      <div class="balance-value" id="balance">R$ 0,00</div>
-      <div class="balance-foot"><span class="pill">● Ambiente de teste</span><span>Atualizado agora</span></div>
-    </section>
-
-    <section class="actions" aria-label="Ações principais">
-      <button class="action-card" data-view="receive"><span class="action-icon purple">▦</span><strong>Receber Pix</strong><small>Simular cobrança</small></button>
-      <button class="action-card" data-view="transfer"><span class="action-icon mint">↗</span><strong>Transferir</strong><small>Simular transferência</small></button>
-    </section>
-
-    <section class="section-heading"><div><h2>Atividade recente</h2><p>Movimentações simuladas</p></div><button id="clearHistory" class="text-button">Limpar</button></section>
-    <section id="transactions" class="transactions">
-      <div class="empty-state"><div class="empty-icon">↔</div><strong>Nenhuma movimentação</strong><p>Suas transações de demonstração aparecerão aqui.</p></div>
-    </section>
-
-    <nav class="bottom-nav" aria-label="Navegação principal">
-      <button class="nav-item active" data-view="home"><span>⌂</span>Início</button>
-      <button class="nav-item" data-view="receive"><span>▦</span>Receber</button>
-      <button class="nav-item" data-view="transfer"><span>↗</span>Transferir</button>
-      <button class="nav-item" data-view="security"><span>♢</span>Segurança</button>
-    </nav>
-  </main>
-
-  <dialog id="modal">
-    <div class="modal-header"><div><span class="eyebrow">MEU PIX</span><h2 id="modalTitle">Receber Pix</h2></div><button class="icon-button" id="closeModal" aria-label="Fechar">×</button></div>
-    <div id="modalContent"></div>
-  </dialog>
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  <script src="app.js"></script>
-</body>
-</html>
+<div class="app-shell">
+<header class="topbar"><div class="brand"><div class="brand-mark"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3 35 12v16L20 37 5 28V12Z"/><path d="M13 15h14M13 20h14M13 25h9"/></svg></div><div><strong>meu<span>pix</span></strong><small>Sua carteira digital</small></div></div><button class="avatar" id="securityTop" aria-label="Segurança">W</button></header>
+<div class="demo-banner"><span class="live-dot"></span><div><b>Ambiente de demonstração</b><small>Não movimenta dinheiro real</small></div><span class="demo-tag">DEMO</span></div>
+<main>
+<section class="balance-card"><div class="balance-top"><span class="muted">SALDO DISPONÍVEL</span><button id="toggleBalance" class="eye" aria-label="Ocultar saldo"><svg viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button></div><div class="balance-value" id="balance">R$ 1.250,00</div><div class="balance-bottom"><span class="balance-chip"><span>✦</span> Saldo fictício</span><span class="balance-update">Atualizado agora</span></div><div class="card-glow"></div><div class="card-orb orb-one"></div><div class="card-orb orb-two"></div></section>
+<section class="quick-actions"><button class="quick-action" data-view="receive"><span class="action-icon lilac"><svg viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 17v3h14v-3"/></svg></span><b>Receber</b><small>Pix demonstrativo</small></button><button class="quick-action" data-view="transfer"><span class="action-icon green"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg></span><b>Transferir</b><small>Simular envio</small></button><button class="quick-action" data-view="history"><span class="action-icon blue"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 2.6-6.4L3 8m0-5v5h5M12 7v5l4 2"/></svg></span><b>Extrato</b><small>Ver atividade</small></button><button class="quick-action" data-view="security"><span class="action-icon amber"><svg viewBox="0 0 24 24"><path d="M12 3 20 6v5c0 5-3.4 8-8 10-4.6-2-8-5-8-10V6Z"/><path d="m9 12 2 2 4-4"/></svg></span><b>Segurança</b><small>Saiba mais</small></button></section>
+<section class="section-heading" id="historyHeading"><div><span class="eyebrow">VISÃO GERAL</span><h2>Movimentações</h2><p>Seu histórico de demonstração</p></div><button id="seeAll" class="see-all">Ver tudo <span>→</span></button></section>
+<div class="filter-row"><button class="filter active" data-filter="all">Tudo</button><button class="filter" data-filter="in">Entradas</button><button class="filter" data-filter="out">Saídas</button></div>
+<section id="transactions" class="transactions"><div class="empty-state"><div class="empty-icon">↔</div><b>Nenhuma movimentação ainda</b><p>As operações que você simular aparecerão aqui.</p><button class="outline-btn" data-view="receive">Fazer primeira simulação</button></div></section>
+<div class="safety-note"><span class="shield">✓</span><div><b>Seu protótipo, com transparência</b><p>Valores e operações são fictícios e ficam neste navegador.</p></div></div>
+</main>
+<nav class="bottom-nav"><button class="nav-item active" data-view="home"><span>⌂</span>Início</button><button class="nav-item" data-view="receive"><span>↓</span>Receber</button><button class="nav-item" data-view="transfer"><span>↗</span>Transferir</button><button class="nav-item" data-view="security"><span>◇</span>Segurança</button></nav>
+</div>
+<dialog id="modal"><div class="modal-header"><div><span class="eyebrow">MEU PIX · DEMO</span><h2 id="modalTitle">Receber Pix</h2></div><button class="close-btn" id="closeModal" aria-label="Fechar">×</button></div><div id="modalContent"></div></dialog><div id="toast" class="toast" role="status" aria-live="polite"></div><script src="app.js"></script>
+</body></html>

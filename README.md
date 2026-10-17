@@ -1,30 +1,15 @@
-# Meu Pix — protótipo seguro
+# Meu Pix — protótipo visual v2
 
-Este é um protótipo de interface para iPhone e navegador. **Não movimenta dinheiro real.** Os valores, cobranças, QR visual e transferências são inteiramente fictícios.
-
-## Como testar no computador
-1. Extraia o ZIP.
-2. Abra `index.html` no navegador.
-3. Use **Receber Pix** e gere uma cobrança de demonstração.
-4. Toque em **Simular pagamento recebido** para adicionar saldo fictício.
-5. Teste a transferência simulada usando esse saldo.
-
-## Como testar no iPhone
-Para instalar como web app, os arquivos precisam estar publicados em um endereço HTTPS:
-1. Hospede os arquivos estáticos em um serviço HTTPS.
-2. Abra o endereço no Safari do iPhone.
-3. Toque em Compartilhar → **Adicionar à Tela de Início**.
-
-## Para uma integração real (etapa futura)
-- Criar um backend HTTPS (por exemplo, Node.js) para chamar a API do provedor.
-- Guardar tokens de API apenas em variáveis de ambiente no servidor, nunca no JavaScript do navegador.
-- Validar pagamentos com webhooks assinados/validados e consultar o status no servidor.
-- Implementar autenticação forte, limites, idempotência, registros de auditoria e confirmação do destinatário antes de transferências.
-- Confirmar elegibilidade da conta e tarifas com o provedor.
-- Nunca confiar no saldo calculado no cliente como saldo financeiro real.
+Protótipo estático responsivo com visual fintech escuro, saldo fictício, atalhos, filtros de extrato e modais de simulação.
 
 ## Arquivos
-- `index.html`: interface principal
-- `styles.css`: estilo responsivo
-- `app.js`: interações simuladas
-- `manifest.json` e `sw.js`: suporte de instalação/offline
+- `index.html`: estrutura da interface
+- `styles.css`: estilos responsivos
+- `app.js`: interações demonstrativas
+- `manifest.json`, `sw.js`, `icon.svg`: instalação PWA e cache básico
+
+## Atualizar GitHub Pages
+Envie os arquivos desta pasta para a raiz do repositório GitHub existente e confirme o commit. O GitHub Pages atualizará o site automaticamente após alguns minutos.
+
+## Importante
+Este projeto NÃO é um banco nem uma carteira real. Saldo e operações são fictícios, não gera QR Code Pix, não se conecta a bancos e não movimenta dinheiro real. Não inserir chaves, senhas ou dados financeiros reais. Uma integração futura exige provedor de pagamento autorizado, backend seguro, validação de webhooks e revisão de privacidade/segurança.
