@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="Protótipo pessoal para acompanhar recebimentos Pix e transferências.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <title>Meu Pix — Protótipo</title>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark">P</div><div><strong>Meu Pix</strong><small>Área pessoal</small></div></div>
+      <button class="icon-button" id="privacyBtn" aria-label="Informações de segurança" title="Segurança">♢</button>
+    </header>
+
+    <section class="notice" role="status">
+      <span class="notice-dot"></span>
+      <div><strong>Modo de demonstração</strong><p>Este protótipo não movimenta dinheiro real.</p></div>
+    </section>
+
+    <section class="balance-card">
+      <div class="balance-head"><span>Saldo de demonstração</span><button id="toggleBalance" aria-label="Mostrar ou ocultar saldo">◉</button></div>
+      <div class="balance-value" id="balance">R$ 0,00</div>
+      <div class="balance-foot"><span class="pill">● Ambiente de teste</span><span>Atualizado agora</span></div>
+    </section>
+
+    <section class="actions" aria-label="Ações principais">
+      <button class="action-card" data-view="receive"><span class="action-icon purple">▦</span><strong>Receber Pix</strong><small>Simular cobrança</small></button>
+      <button class="action-card" data-view="transfer"><span class="action-icon mint">↗</span><strong>Transferir</strong><small>Simular transferência</small></button>
+    </section>
+
+    <section class="section-heading"><div><h2>Atividade recente</h2><p>Movimentações simuladas</p></div><button id="clearHistory" class="text-button">Limpar</button></section>
+    <section id="transactions" class="transactions">
+      <div class="empty-state"><div class="empty-icon">↔</div><strong>Nenhuma movimentação</strong><p>Suas transações de demonstração aparecerão aqui.</p></div>
+    </section>
+
+    <nav class="bottom-nav" aria-label="Navegação principal">
+      <button class="nav-item active" data-view="home"><span>⌂</span>Início</button>
+      <button class="nav-item" data-view="receive"><span>▦</span>Receber</button>
+      <button class="nav-item" data-view="transfer"><span>↗</span>Transferir</button>
+      <button class="nav-item" data-view="security"><span>♢</span>Segurança</button>
+    </nav>
+  </main>
+
+  <dialog id="modal">
+    <div class="modal-header"><div><span class="eyebrow">MEU PIX</span><h2 id="modalTitle">Receber Pix</h2></div><button class="icon-button" id="closeModal" aria-label="Fechar">×</button></div>
+    <div id="modalContent"></div>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
